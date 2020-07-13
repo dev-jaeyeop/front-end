@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        width: 500px;
+        height: 500px;
+        border: 1px solid black;
+        margin-top: 15px;
+        position: relative;
+      }
+
+      .box {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    상자개수 <input type="text" id="boxCount" />
+    <input type="button" value="확인" onclick="createBox()" />
+    <div id="container"></div>
+
+    <script>
+      function createBox() {
+        document.getElementById("container").innerHTML = "";
+
+        var boxCount = document.getElementById("boxCount").value;
+
+        for (var i = 0; i < boxCount; i++) {
+          var width = Math.floor(Math.random() * 100);
+          var height = Math.floor(Math.random() * 100);
+
+          var x = Math.floor(Math.random() * 400);
+          var y = Math.floor(Math.random() * 400);
+
+          var radius = Math.floor(Math.random() * 50);
+
+          var r = Math.floor(Math.random() * 255);
+          var g = Math.floor(Math.random() * 255);
+          var b = Math.floor(Math.random() * 255);
+
+          var create =
+            "<div class='box' id = '" +
+            i +
+            "' style='width: " +
+            width +
+            "px; height: " +
+            height +
+            "px; left: " +
+            x +
+            "px; top: " +
+            y +
+            "px; border-radius: " +
+            radius +
+            "%; background-color: rgb(" +
+            r +
+            ", " +
+            g +
+            ", " +
+            b +
+            ");' onclick='removeBox(this.id)'></div>";
+
+          document.getElementById("container").innerHTML += create;
+        }
+      }
+
+      function removeBox(id) {
+        var box = document.getElementById(id);
+        document.getElementById("container").removeChild(box);
+      }
+    </script>
+  </body>
+</html>

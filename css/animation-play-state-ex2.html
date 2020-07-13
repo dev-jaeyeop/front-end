@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      .box-container {
+        border: 1px solid black;
+        width: 500px;
+      }
+
+      .button-container {
+        width: 500px;
+        text-align: center;
+        margin-top: 30px;
+      }
+
+      .box {
+        position: relative;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        animation-name: move;
+        animation-duration: 2s;
+        animation-play-state: paused;
+        animation-iteration-count: infinite;
+      }
+
+      .red {
+        position: absolute;
+        width: 20px;
+        height: 30px;
+        left: 250px;
+        top: 90px;
+        background-color: red;
+      }
+
+      @keyframes move {
+        from {
+          left: 0;
+        }
+        to {
+          left: 398px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box-container">
+      <div class="box"></div>
+    </div>
+    <div class="red"></div>
+    <div class="button-container">
+      <button class="start">start animation</button>
+      <button class="pause">pause animation</button>
+    </div>
+
+    <script>
+      const box = document.querySelector(".box");
+
+      document.querySelector(".start").addEventListener("click", function () {
+        // trigger animation
+        // prefixes would be needed..
+        box.style.animationPlayState = "running";
+      });
+
+      document.querySelector(".pause").addEventListener("click", function () {
+        // pause animation
+        // prefixes would be needed..
+        box.style.animationPlayState = "paused";
+      });
+    </script>
+  </body>
+</html>

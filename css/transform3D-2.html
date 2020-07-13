@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      .wrap {
+        perspective: 500px;
+      }
+
+      .box {
+        position: absolute;
+        left: 300px;
+        width: 200px;
+        height: 200px;
+        background-color: gray;
+      }
+
+      .box:hover {
+        transform: translateZ(150px);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="box"></div>
+    </div>
+  </body>
+</html>

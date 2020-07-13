@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .wrap {
+            width: 1024px;
+            margin: 0 auto;
+        }
+
+        .topmenu {
+            background-color: red;
+            color: white;
+        }
+
+        .topmenu ul {
+            border: 1px solid black;
+            /* display: inline-block; */
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .topmenu ul li {
+            height: 40px;
+            padding-top: 5px;
+            list-style: none;
+            margin-right: 20px;
+        }
+
+        .logomenu {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .logomenu .logo {
+            width: 200px;
+            height: 100px;
+            border: 1px solid black;
+
+        }
+
+        .logomenu input {
+            width: 200px;
+            height: 30px;
+            border: 2px solid red;
+        }
+
+        .logomenu .search {
+            padding-top: 30px;
+        }
+
+        .nav {}
+
+        .nav ul {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .nav ul li {
+            height: 40px;
+            padding: 5px;
+            list-style: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+
+        <div class="topmenu">
+            <ul>
+                <li>로그인</li>
+                <li>회원가입</li>
+                <li>주문조회</li>
+                <li>장바구니</li>
+                <li>마이페이지</li>
+                <li>고객센터</li>
+            </ul>
+        </div>
+
+        <div class="logomenu">
+            <div class="logo">logo</div>
+            <div class="search">
+                <input type="text">
+            </div>
+        </div>
+
+        <div class="nav">
+            <ul>
+                <li>회사소개</li>
+                <li>보드게임</li>
+                <li>여치니</li>
+                <li>디자인 문구</li>
+                <li>뷰티&amp;도구</li>
+                <li>선물포장</li>
+                <li>아이디어 소품</li>
+                <li>패션&amp;잡화</li>
+                <li>기획&amp;시즌 상품</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+
+</html>

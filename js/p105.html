@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #demo {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="demo"></div>
+    <script>
+      var text = "abcdefbg";
+      // text.lenght result = 7
+
+      // text.indexOf("b"); result = 1 (start-left -> index)
+      // text.lastIndexOf("b"); result = 6 (start-right -> index)
+      // text.indexOf("b", 5); result = 6 (startIndex, count)
+
+      // text.slice(1, 5); result = "bcde" (start, end - 1)
+
+      // text.substring(1, 5); result = "bcde" (start, end - 1)
+      // text.substr(1, 5); result = "bcdef" (startIndex, count)
+
+      var str = "Please visit MS! and MS!";
+      //   var temp = str.replace("MS", "W3C");
+      //   temp = str.replace(/ms/gi, "W3C"); (g: global / i: ignoreCase)
+      //   document.getElementById("demo").innerText = temp;
+
+      var strArr = str.split(" ");
+      document.getElementById("demo").innerText = typeof strArr;
+    </script>
+  </body>
+</html>

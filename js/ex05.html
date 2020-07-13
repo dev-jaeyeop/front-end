@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #txt {
+        border: 1px solid black;
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      찾을 글
+      <input id="tf" />
+      <input type="button" value="확인" onclick="check()" />
+    </div>
+    <div id="txt">
+      해야할 일이 많이 밀렸다거나, 도무지 능률이 오르지 않을때에는 과감히 밖으로
+      나가서 산책도 즐기고 사람도 구경하면서 휴식을 취하여 보세요. 그리고 다시
+      돌아와 책상 앞에 앉으면 아시발 아까 할 껄 이라는 생각이 들곤 합니다.
+    </div>
+
+    <script>
+      function check() {
+        var tf = document.getElementById("tf").value;
+        var txt = document.getElementById("txt").innerHTML;
+        var temp = txt.replace(
+          tf,
+          "<span style = 'background-color: yellow;'>" + tf + "</span>"
+        );
+
+        document.getElementById("txt").innerHTML = temp;
+      }
+    </script>
+  </body>
+</html>

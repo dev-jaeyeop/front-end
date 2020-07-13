@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .container div {
+            min-height: 150px;
+            min-width: 150px;
+        }
+
+        .container {
+            display: flex;
+            flex-flow: row wrap;
+        }
+
+        .c1,
+        .c2,
+        .c3,
+        .c4 {
+            width: 100%;
+        }
+
+        .c1 {
+            color: #ddd;
+            background-color: red;
+        }
+
+        .c2 {
+            color: #ddd;
+            background-color: mediumvioletred;
+        }
+
+        .c3 {
+            color: #ddd;
+            background-color: darkred;
+        }
+
+        @media (min-width: 600px) {
+            .c1 {
+                width: 25%;
+            }
+
+            .c2 {
+                width: 75%;
+            }
+        }
+
+        @media (min-width: 800px) {
+            .container {
+                width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" role="main">
+        <div class="c1"><b>레이아웃 시프터(Layout shifter)</b>
+            레이아웃 시프터 패턴은 반응성이 가장 뛰어난 패턴이며, 여러 화면 너비에 복수의 중단점이 있습니다.
+
+            이 레이아웃의 핵심은 다른 열 아래로 이동 및 재배치하는 방식이 아니라 콘텐츠의 자리 이동 방식에 있습니다. 각 주요
+            중단점 간의 현저한 차이로 인해 유지 관리하기가 훨씬 복잡하고 전체 콘텐츠 레이아웃뿐만 아니라 요소 내의 변경도 포
+            함합니다.
+        </div>
+        <div class="c4">
+            <div class="c2">2</div>
+            <div class="c3">3</div>
+        </div>
+
+    </div>
+</body>
+
+</html>

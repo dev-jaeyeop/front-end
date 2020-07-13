@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        div {
+            position: absolute;
+        }
+        
+        .menu1,
+        .menu2,
+        .menu3 {
+            display: inline-block;
+            position: relative;
+            text-align: center;
+            width: 100px;
+            height: 50px;
+        }
+
+        .menu1 ul,
+        .menu2 ul,
+        .menu3 ul {
+            display: none;
+            width: 50px;
+            height: 50px;
+            color: red;
+        }
+
+        .menu1:hover ul,
+        .menu2:hover ul,
+        .menu3:hover ul {
+            display: inline;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul class="menu">
+            <li class="menu1">menu1
+                <ul>
+                    <li>sub1</li>
+                    <li>sub1</li>
+                </ul>
+            </li>
+            <li class="menu2">menu2
+                <ul>
+                    <li>sub2</li>
+                    <li>sub2</li>
+                </ul>
+            </li>
+            <li class="menu3">menu3
+                <ul>
+                    <li>sub3</li>
+                    <li>sub3</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

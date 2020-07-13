@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            background-color: red;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        #header {
+            width: 1000px;
+            text-align: right;
+            margin: auto;
+        }
+
+        #header div {
+            display: inline-block;
+            color: white;
+            font-size: 13px;
+            margin: 5px;
+        }
+
+        ul {
+            display: none;
+        }
+        
+        #hitem5:hover ul {
+            display: block;
+        }
+
+        .hitem1,
+        .hitem2,
+        .hitem3,
+        .hitem4 {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div id="header">
+            <div class="hitem1">로그인</div>
+            <div class="hitem2">회원가입</div>
+            <div class="hitem3">주문조회</div>
+            <div class="hitem4">장바구니</div>
+            <div class="hitem5">마이페이지▼
+                <ul>
+                    <li>나의정보</li>
+                    <li>1:1문의</li>
+                    <li>마이게시판</li>
+                    <li>회원등급</li>
+                    <li>상품보관함</li>
+                    <li>회원정보변경</li>
+                </ul>
+            </div>
+            <div class="hitem6">고객센터</div>
+        </div>
+    </header>
+
+    <div>
+        <div></div>
+
+    </div>
+</body>
+
+</html>

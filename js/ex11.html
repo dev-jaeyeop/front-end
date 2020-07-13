@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #text {
+        border: 1px solid black;
+        width: 350px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    글자색
+    <select id="color" onchange="setColor(this.id)">
+      <option value="red">red</option>
+      <option value="green">green</option>
+      <option value="blue">blue</option>
+    </select>
+    배경색
+    <select id="backgroundColor" onchange="setColor(this.id)">
+      <option value="red">red</option>
+      <option value="green">green</option>
+      <option value="blue">blue</option>
+    </select>
+
+    <p id="text">
+      누군가 당신에게 이유없이 계속 좆같이 군다면 정말 좆같이 대할 수 있는
+      이유를 만들어 주어라.
+    </p>
+
+    <script>
+      function getInfo() {}
+
+      function setColor(id) {
+        if (document.getElementById(id) == "color") {
+          document.getElementById("text").style.color = document.getElementById(
+            id
+          ).value;
+        } else if (document.getElementById(id) === "backgroundColor") {
+          document.getElementById(
+            "text"
+          ).style.backgroundColor = document.getElementById(id).value;
+        }
+      }
+    </script>
+  </body>
+</html>

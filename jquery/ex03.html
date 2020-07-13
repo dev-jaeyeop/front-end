@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      #wrap {
+        border: 1px solid black;
+        display: flex;
+      }
+
+      .menu {
+        position: relative;
+      }
+
+      .menu div {
+        position: absolute;
+        display: none;
+      }
+
+      .box {
+        display: flex;
+      }
+
+      .sub1,
+      .sub2 {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div>
+        <div class="menu1">menu1</div>
+        <div class="sub1">sub1</div>
+        <div class="sub1">sub1</div>
+      </div>
+
+      <div>
+        <div class="menu2">menu2</div>
+        <div class="sub2">sub2</div>
+        <div class="sub2">sub2</div>
+      </div>
+    </div>
+    <!-- <div id="wrap">
+      <div class="menu">
+        menu1
+        <div id="sub1-1">sub1</div>
+        <div id="sub1-2">sub2</div>
+      </div>
+      <div class="menu">
+        menu2
+        <div id="sub2-1">sub1</div>
+        <div id="sub2-2">sub2</div>
+      </div>
+    </div> -->
+
+    <!-- <ul>
+      <li>
+        menu1
+        <ul>
+          <li>sub1</li>
+          <li>sub2</li>
+        </ul>
+      </li>
+      <li>
+        menu2
+        <ul>
+          <li>sub1</li>
+          <li>sub2</li>
+        </ul>
+      </li>
+    </ul> -->
+    <script>
+      //   $(document).ready(function () {
+      //     $(".menu").click(function () {
+      //       $(this).children("div").show();
+      //     });
+      //   });
+
+      $(document).ready(function () {
+        $(this).click(function () {
+          $(this).siblings().toggle(500);
+        });
+      });
+    </script>
+  </body>
+</html>

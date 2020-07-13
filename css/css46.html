@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .container div {
+            min-height: 150px;
+            min-width: 150px;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .c1 {
+            color: #ddd;
+            background-color: red;
+        }
+
+        .c2 {
+            color: #ddd;
+            background-color: mediumvioletred;
+        }
+
+        .c3 {
+            color: #ddd;
+            background-color: darkred;
+        }
+
+        .c1,
+        .c3 {
+            position: absolute;
+            width: 250px;
+            height: 100%;
+        }
+
+        .c2 {
+            width: 100%;
+        }
+
+        .c3 {
+            left: 100%;
+        }
+
+        @media (min-width: 500px) {
+            .container {
+                flex-flow: row nowrap;
+            }
+
+            .c1 {
+                position: relative;
+            }
+
+            .c2 {
+                position: relative;
+            }
+        }
+
+        @media (min-width: 800px) {
+            .c3 {
+                position: relative;
+                left: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="c1">1</div>
+        <div class="c2"><b>오프 캔버스(Off canvas)</b>
+            오프 캔버스 패턴은 콘텐츠를 수직으로 쌓지 않고 사용 빈도가 낮은 콘텐츠(예: 탐색 또는 앱 메뉴)를 화면 밖에 배치하
+            고, 화면 크기가 충분히 커지면 표시하고, 작은 화면에서는 클릭했을 때만 보여줍니다.
+        </div>
+        <div class="c3">3</div>
+    </div>
+</body>
+
+</html>

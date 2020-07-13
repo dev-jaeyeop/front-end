@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        input {
+            width: 50px;
+        }
+    </style>
+  </head>
+  <body>
+      <table>
+          <tr>
+              <td>width: 
+                <input id="width" type="text">
+            </td>
+            <td>
+                height:
+                <input id="height" type="text">
+            </td>
+            <td>
+                color:
+                <input id="color" type="color">
+            </td>
+          </tr>
+          <tr>
+              <td>
+                x:
+                <input id="x" type="text">
+              </td>
+              <td>
+                y:
+                <input id="y" type="text">
+              </td>
+              <td>
+                <input id="button" type="button" value="ok" onclick="createBox()">
+              </td>
+          </tr>
+
+          <div style="float: left;"></div>
+          <!-- <div id="container"></div> -->
+        </table>  
+    </body>
+    
+    <script>
+        function createBox() {
+            var width = document.getElementById("width").value;
+            var height = document.getElementById("height").value;
+            var color = document.getElementById("color").value;
+            var x = document.getElementById("x").value;
+            var y = document.getElementById("y").value;
+            var write = "<div style='width: " + width + "px; height: "+ height + "px; background-color: " + color + "; margin-left: " + x + "px; margin-top: " + y + "px;'></div>";
+            document.body.innerHTML += write;
+        }
+    </script>
+  </body>
+</html>

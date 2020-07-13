@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #container {
+        border: 1px solid black;
+        width: 500px;
+        height: 500px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="container"
+      onmousemove="mouseLocation('move')"
+      ,
+      onmouseout="mouseLocation('out')"
+    ></div>
+    <div id="demo"></div>
+
+    <script>
+      function mouseLocation(type) {
+        var x = event.offsetX;
+        var y = event.offsetY;
+        if (type == "move") {
+          var coor = "x: " + x + ", y: " + y;
+        } else if (type == "out") {
+          var coor = "x: 0, y: 0";
+        }
+        document.getElementById("demo").innerHTML = coor;
+      }
+    </script>
+  </body>
+</html>

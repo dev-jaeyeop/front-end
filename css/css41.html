@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .container div {
+            display: flex;
+            flex-direction: row;
+            min-width: 150px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+
+        .c1,
+        .c2,
+        .c3 {
+            width: 100%;
+        }
+
+        .c1 {
+            color: #ddd;
+            background-color: red;
+        }
+
+        .c2 {
+            color: #ddd;
+            background-color: mediumvioletred;
+        }
+
+        .c3 {
+            color: #ddd;
+            background-color: darkred;
+        }
+
+        @media (min-width: 600px) {
+            .c1 {
+                width: 60%;
+                order: 2;
+            }
+
+            .c2 {
+                width: 40%;
+                order: 1;
+            }
+
+            .c3 {
+                width: 100%;
+                order: 3;
+            }
+
+            @media (min-width: 800px) {
+                .c2 {
+                    width: 20%;
+                }
+
+                .c3 {
+                    width: 20%;
+                }
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="c1">
+            <p><b>열 끌어놓기(Column Drop)</b>
+                전체 너비가 가득 찬 다중 열 레이아웃의 경우, 열 끌어놓기는 창 너비가 콘텐츠에 비해 너무 좁아지면 열을 수직으로 쌓
+                습니다.
+                결국 모든 열이 수직으로 쌓이게 됩니다. 이 레이아웃 패턴의 중단점 선택은 콘텐츠에 따라 다르며 디자인에 따라
+                변할 수 있습니다.
+            </p>
+        </div>
+        <div class="c2">c2</div>
+        <div class="c3">c3</div>
+    </div>
+</body>
+
+</html>

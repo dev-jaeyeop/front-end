@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .top {
+            width: 200px;
+            border: 1px solid black;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        .top>ul>li>ul {
+            background-color: pink;
+        }
+
+        input[type=radio] {
+            display: none;
+        }
+
+        #ra1:checked~ul,
+        #ra2:checked~ul,
+        #ra3:checked~ul {
+            display: block;
+        }
+
+        label+ul {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="top">
+        <ul>
+            <li><input type="radio" name="m" id="ra1">
+                <label for="ra1">menu1</label>
+                <ul>
+                    <li>sub1</li>
+                    <li>sub1</li>
+                </ul>
+            </li>
+            <li><input type="radio" name="m" id="ra2">
+                <label for="ra2">menu2</label>
+                <ul>
+                    <li>sub2</li>
+                    <li>sub2</li>
+                </ul>
+            </li>
+            <li><input type="radio" name="m" id="ra3">
+                <label for="ra3">menu3</label>
+                <ul>
+                    <li>sub3</li>
+                    <li>sub3</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

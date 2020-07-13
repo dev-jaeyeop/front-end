@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>GitHub</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css" />
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            text-align: center;
+        }
+
+        li {
+            display: inline-block;
+            list-style: none;
+        }
+
+        .fab {
+            font-size: 25px;
+        }
+
+        .main {
+            font-size: 15px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .sub {
+            font-size: 13px;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        #select {
+            width: 100%;
+            height: 100%;
+            background-image: url(space.png);
+            background-size: cover;
+        }
+
+        #text {
+            margin-top: 10%;
+            margin-left: 20%;
+            display: inline-block;
+            color: white;
+        }
+
+        #text1 {
+            font-size: 70px;
+        }
+
+        #input {
+            font-size: 15px;
+            margin-left: 10%;
+            height: 500px;
+            display: inline-block;
+            color: white;
+        }
+
+        .sign {
+            border-radius: 5px;
+            color: white;
+            background-color: rgb(0, 128, 0, 0.7);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <ul>
+            <li class="main"><i class="fab fa-github"></i></li>
+            <li class="main">Personal</li>
+            <li class="main">Open source</li>
+            <li class="main">Business</li>
+            <li class="main">Explore</li>
+            <li class="sub" style="margin-left: 100px;">Pricing</li>
+            <li class="sub">Blog</li>
+            <li class="sub">Support</li>
+            <li><input type="text" value="Search GitHub"></li>
+            <li><input type="button" value="Sign in"></li>
+            <li><input class="sign" type="button" value="Sign up"></li>
+        </ul>
+    </header>
+
+    <div id="select">
+        <div id="text">
+            <div id="text1">
+                How people<br>
+                build software<br><br>
+            </div>
+            <div id="text2">
+                Millions of developers use GitHub to buile<br>
+                personal projects, support their businesses,<br>
+                and work together on open source technologies.
+            </div>
+        </div>
+        <div id="input">
+            <input class="input" type="text" value="Pick a username"><br>
+            <input class="input" type="text" value="Your email address"><br>
+            <input class="input" type="text" value="Create a password"><br>
+            Use at least one letter, one numeral, and seven characters.<br>
+            <input class="sign" type="button" value="Sign up for GitHub"><br>
+            By clicking "Sign up for GitHub", you agree to our terms of<br>
+            service and privacy policy. We'll occasionally send you account<br>
+            related emails.<br>
+        </div>
+
+    </div>
+</body>
+
+</html>

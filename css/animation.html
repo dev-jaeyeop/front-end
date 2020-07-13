@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        position: absolute;
+
+        animation-name: move, fadeOut, changeColor;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-duration: alternate;
+      }
+
+      @keyframes move {
+        /* from {
+          left: 0;
+        }
+        to {
+          left: 300px;
+        } */
+        0% {
+          left: 0;
+        }
+
+        100% {
+          left: 300px;
+          /* background-color: blue; */
+          border-radius: 50%;
+        }
+      }
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+      @keyframes changeColor {
+        frome {
+          background-color: red;
+        }
+        to {
+          background-color: blue;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+  </body>
+</html>

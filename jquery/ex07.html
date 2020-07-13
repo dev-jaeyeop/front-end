@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+      integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        position: absolute;
+        top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <button>눌러</button>
+    <script>
+      $(document).ready(function () {
+        $("button").click(function () {
+          $("div").animate(
+            {
+              left: "250px",
+            },
+            function () {
+              $("div").animate(
+                {
+                  top: "200px",
+                },
+                function () {
+                  $("div").animate({
+                    backgroundColor: "red",
+                  });
+                }
+              );
+            }
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="email" />
+    <input type="button" value="check" onclick="check()" />
+    <script>
+      function check() {
+        var txt = document.getElementById("email").value;
+        var count = 0;
+        if (txt.indexOf("@") != -1 && txt != null) {
+          for (var i = 0; i < txt.length && txt[i] == "."; i++) {
+            count++;
+          }
+          if (0 < count && count < 3) {
+            alert("success");
+          } else {
+            alert("error");
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

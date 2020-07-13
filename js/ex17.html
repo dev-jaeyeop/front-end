@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="file" class="button" />
+    <input type="button" value="+" onclick="createFile()" />
+    <input type="button" value="-" onclick="removeFile()" />
+    <input type="button" value="확인" onclick="printList()" />
+    <br />
+
+    <script>
+      function createFile() {
+        var input =
+          "<input type='file' class='button' style='display: block;'/>";
+        document.body.innerHTML += input;
+      }
+
+      function removeFile() {
+        var inputs = document.querySelectorAll(".button");
+        if (inputs.length > 1) {
+          document.body.removeChild(inputs[inputs.length - 1]);
+        }
+      }
+
+      function printList() {
+        var inputList = document.querySelectorAll(".button");
+        if (inputList.length > 1) {
+          var text = "";
+          for (var i = 0; i < inputList.length; i++) {
+            text += inputList[i].value;
+          }
+          alert(text);
+        }
+      }
+    </script>
+  </body>
+</html>

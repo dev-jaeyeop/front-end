@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .panel {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 100px auto;
+      }
+
+      .card {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        transition: all 0.5s;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+      }
+
+      .front {
+        z-index: 2;
+      }
+
+      .back {
+        z-index: 1;
+        transform: rotateY(-180deg);
+      }
+
+      .panel:hover .front {
+        z-index: 1;
+        transform: rotateY(180deg);
+      }
+
+      .panel:hover .back {
+        z-index: 2;
+        transform: rotateY(0deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="panel">
+      <div class="front card">
+        <img src="bmo.jpg" alt="" />
+      </div>
+
+      <div class="back card">
+        <img src="bmo.jpg" alt="" />
+      </div>
+    </div>
+  </body>
+</html>

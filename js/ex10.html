@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>select car</p>
+    <select name="" id="selectCar" onchange="selectCar()">
+      <option value="audi">audi</option>
+      <option value="bmw">bmw</option>
+      <option value="benz">benz</option>
+      <option value="volvo">volvo</option>
+    </select>
+
+    your car <span id="car"></span>
+
+    <div id="demo" onmouseover="setColor('over')" onmouseout="setColor('out')">
+      onmouseover onmouseout
+    </div>
+    <script>
+      // onclick
+      // onchange
+      // onmouseover
+      // onmouseout
+      // onkeydown
+      // onkeyup
+      // onkeypress
+      // onload
+      // onsubmit (button)
+      function selectCar() {
+        var car = document.getElementById("selectCar").value;
+        document.getElementById("car").innerHTML = car;
+      }
+
+      function setColor(type) {
+        switch (type) {
+          case "over":
+            document.getElementById("demo").style.color = "red";
+            break;
+          case "out":
+            document.getElementById("demo").style.color = "blue";
+            break;
+        }
+      }
+    </script>
+  </body>
+</html>

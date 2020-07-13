@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .box-container {
+            width: 350px;
+            border: 2px solid #e91bf5;
+        }
+
+        .box-container div {
+            padding: 10px;
+            border: 1px solid green;
+            background-color: #e3ffe0;
+        }
+
+        #box1 {
+            position: static;
+            top: 20px;
+            left: 30px;
+        }
+
+        #box2 {
+            position: relative;
+            top: 20px;
+            left: 30px;
+        }
+
+        #box3 {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+        }
+
+        #box4 {
+            position: fixed;
+            top: 20px;
+            right: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box-container">
+        <div id="box1">static box</div>
+        <div id="box2">relative box</div>
+        <div id="box3">absolute box</div>
+        <div id="box4">fixed box</div>
+    </div>
+</body>
+
+</html>

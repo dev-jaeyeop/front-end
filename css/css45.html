@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 14px;
+        }
+
+        div {
+            font-size: 1.2rem;
+            /* 14px * 1.2 */
+        }
+
+        .vmin {
+            width: 100vmin;
+            height: 100vmin;
+            border: 1px solid black;
+        }
+
+        p {
+            width: 40ch;
+            height: 40ch;
+            border: 1px solid red;
+        }
+
+        sub {
+            position: relative;
+            bottom: -1ex;
+        }
+
+        sup {
+            position: relative;
+            bottom: 1ex;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="test">
+        Test(14px * 1.2 = 16.8px)
+        <div class="test2">
+            Test2 (16.8 * 1.2 = 20.16px)
+            <div class="test3">
+                Test3(20.16 * 1.2 = 24.192px)
+            </div>
+        </div>
+        <div class="vmin">
+            브라우저 크기 1100px;
+            높이 700px;
+
+            1vmin = 7;
+            1vmax = 11;
+        </div>
+        <p></p>
+        <div class="box2">
+            <sub>p</sub>oxe<sup>d</sup>
+        </div>
+
+        <br>
+        ex = 소문자의 글씨 높이값
+        ex = em의 절반값
+    </div>
+</body>
+
+</html>

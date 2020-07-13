@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body onload="checkDevice()">
+    <script>
+      var tempUser = navigator.userAgent;
+      if (
+        tempUser.indexOf("iPhone") > 0 ||
+        tempUser.indexOf("iPad") > 0 ||
+        tempUser.indexOf("iPot") > 0 ||
+        tempUser.indexOf("Android") > 0
+      ) {
+        alert("mobile");
+      } else {
+        alert("desktop");
+      }
+    </script>
+  </body>
+</html>

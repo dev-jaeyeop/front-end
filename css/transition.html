@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        transition: background-color 2s;
+        /* 2s = 2second */
+      }
+
+      div:hover {
+        border-radius: 50%;
+        background-color: blue;
+      }
+
+      /* * {
+            transition-property: all; 애니메이션을 지정할 속성
+            transition-duration: 2s; 총 애니매이션이 완료되는 시간
+            transition-timing-function: linear; 애니메이션 효과의 변화 흐름 ease, linear, ease-in, ease-out, ease-in-out
+            transition-delay: 5s; 대기 시간
+            transition: all 2s; property duration function
+            duration
+            default - all 0 ease 0
+        } */
+    </style>
+  </head>
+  <body>
+    transition/animate <br />
+    <div></div>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        input:enabled {
+            border: 1px solid red;
+        }
+
+        input:disabled {
+            border: 1px solid blue;
+        }
+
+        input:focus {
+            border: 5px solid springgreen;
+        }
+
+        input:checked+input {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <input type="checkbox">
+    <input type="text" value="123">
+    <input type="text" value="456">
+    <input type="text" value="789" disabled>
+</body>
+
+</html>

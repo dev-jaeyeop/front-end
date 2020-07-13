@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            border: 1px solid black;
+            font-size: 0;
+        }
+
+        /* 또는 다음과 같이 바꿔도 됨
+            border: 1px solid black;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap; */
+
+        .container div {
+            display: inline-block;
+            /* .container가 display: flex; 일 경우 필요 없음 */
+            min-height: 150px;
+            min-width: 150px;
+            vertical-align: top;
+            /* .container가 display: flex; 일 경우 필요 없음 */
+        }
+
+        .title {
+            font-size: 20px;
+            /* .container가 display: flex; 일 경우 필요 없음 */
+            background-color: pink;
+            text-align: center;
+        }
+
+        .c1 {
+            color: #ddd;
+            background-color: red;
+            font-size: 15px;
+            /* .container가 display: flex; 일 경우 필요 없음 */
+        }
+
+        .c2 {
+            color: #ddd;
+            background-color: mediumvioletred;
+        }
+
+        .c3 {
+            color: #ddd;
+            background-color: darkred;
+        }
+
+        .c4 {
+            color: #ddd;
+            background-color: palevioletred;
+        }
+
+        .c5 {
+            color: #ddd;
+            background-color: orangered;
+        }
+
+        .title,
+        .c1,
+        .c2,
+        .c3,
+        .c4,
+        .c5 {
+            width: 100%;
+        }
+
+        @media (min-width: 600px) {
+
+            /* 600 이상이라면*/
+            .c2,
+            .c3,
+            .c4,
+            .c5 {
+                width: 50%;
+            }
+        }
+
+        @media (min-width: 800px) {
+
+            /* 800 이상이라면*/
+            .c1 {
+                width: 60%;
+            }
+
+            .c2 {
+                width: 40%;
+            }
+
+            .c3,
+            .c4 {
+                width: 33%;
+            }
+
+            .c5 {
+                width: 34%;
+            }
+        }
+
+        @media (min-width: 800px) {
+
+            /* 800 이상이라면*/
+            .container {
+                width: 800px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="title">유동형(Mosly Fluid)</div>
+        <div class="c1">
+            <p>
+                유동형 패턴은 주로 유동형 그리드로 구성됩니다. 더 넓은 화면에서는 여백만 조정하므로, 대형 화면이나 중형 화면
+                에서 이 패턴은 일반적으로 동일한 크기를 유지합니다.
+                더 작은 화면에서는 열이 수직 방향으로 쌓이면서 기본 콘텐츠가 재배치됩니다. 이 패턴의 한 가지 주요 이점은 대
+                개 소형 화면과 대형 화면에서 하나의 중단점만 필요하다는 것입니다.
+            </p>
+        </div>
+        <div class="c2"></div>
+        <div class="c3"></div>
+        <div class="c4"></div>
+        <div class="c5"></div>
+    </div>
+</body>
+
+</html>

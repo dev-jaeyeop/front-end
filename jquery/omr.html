@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      #wrap {
+        justify-content: space-between;
+      }
+
+      .que {
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .omr {
+        border: 1px solid black;
+      }
+
+      .omr .q1,
+      .omr .q2 {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="wrap">
+      <div class="q1">
+        <h4>1. 시치미 떼다’와 관련있는 동물은 무엇인가?</h4>
+        <div class="ans">① 매</div>
+        <div>② 꿩</div>
+        <div>③ 비둘기</div>
+        <div>④ 참새</div>
+      </div>
+      <div class="q2">
+        <h4>2. 유네스코 지정 세계문화유산이 아닌 것은?</h4>
+        <div>① 조선왕릉</div>
+        <div class="ans">② 경복궁</div>
+        <div>③ 남한산성</div>
+        <div>④ 창덕궁</div>
+      </div>
+
+      <div class="omr">
+        <table>
+          <tr>
+            <td><input type="button" value="결과보기" /></td>
+          </tr>
+
+          <tr>
+            <td><div>문번 답란</div></td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="q1">
+                <h5>1</h5>
+                <div>①</div>
+                <div>②</div>
+                <div>③</div>
+                <div>④</div>
+              </div>
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              <div class="q2">
+                <h5>2</h5>
+                <div>①</div>
+                <div>②</div>
+                <div>③</div>
+                <div>④</div>
+              </div>
+            </td>
+          </tr>
+        </table>
+      </div>
+      <script>
+        $("div [class*='q']")
+          .children("div")
+          .click(function () {
+            var parent = "." + $(this).parent().attr("class");
+            $(parent).children().css("color", "black");
+            $(parent)
+              .children("div")
+              .eq($(this).index() - 1)
+              .css("color", "red");
+            $(parent)
+              .children("div")
+              .eq($(this).index() + 3)
+              .css("color", "red");
+          });
+
+        $("input[value='결과보기']").click(function () {
+          var anss = $(".ans");
+          for (var i = 0; i < anss.length; i++) {
+            if ($(anss[i]).css("color") == "rgb(255, 0, 0)") {
+              $(anss[i]).css("border", "1px solid blue");
+            } else {
+              $(anss[i]).css("border", "1px solid red");
+            }
+          }
+        });
+      </script>
+    </div>
+  </body>
+</html>

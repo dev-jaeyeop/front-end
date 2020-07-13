@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .box {
+        position: relative;
+        width: 100px;
+        height: 100px;
+      }
+
+      img {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        opacity: 0;
+        animation-name: visible;
+        animation-iteration-count: infinite;
+      }
+
+      .img1 {
+        animation-duration: 2s;
+        animation-delay: 5s;
+      }
+
+      .img2 {
+        animation-duration: 2s;
+        animation-delay: 10s;
+      }
+
+      .img3 {
+        animation-duration: 2s;
+        animation-delay: 15s;
+      }
+
+      @keyframes visible {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <img src="bmo.jpg" class="img1" alt="" />
+      <img src="finn.jpg" class="img2" alt="" />
+      <img src="jake.jpg" class="img3" alt="" />
+    </div>
+  </body>
+</html>

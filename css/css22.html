@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        /* .menu div {
+            border: 1px solid black;
+            display: inline-block;
+        }
+
+        .menu1 {
+            background-image: url("finn.png");
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+        }
+
+        .menu2 {
+            background-image: url("jake.png");
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+        }
+
+        .menu3 {
+            background-image: url("bmo.png");
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+        }
+
+        .menu4 {
+            background-image: url("lemongrab.png");
+            width: 100px;
+            height: 100px;
+            background-size: cover;
+        }
+
+        .menu1:hover~.content {
+            background-image: url("finn.png");
+        }
+
+        .menu2:hover~.content {
+            background-image: url("jake.png");
+        }
+
+        .menu3:hover~.content {
+            background-image: url("bmo.png");
+        }
+
+        .menu4:hover~.content {
+            background-image: url("lemongrab.png");
+        }
+
+        .content {
+            border: 1px solid black;
+            background-image: url("finn2.png");
+            width: 500px;
+            height: 500px;
+        } */
+
+        .menu>img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .menu>div {
+            width: 300px;
+            height: 300px;
+            border: 1px solid black;
+            position: relative;
+        }
+
+        .menu>div>img {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .menu>div>img:first-child {
+            display: block;
+        }
+
+        .menu>img:nth-child(1):hover~div>img:nth-child(1) {
+            display: block;
+        }
+
+        .menu>img:nth-child(2):hover~div>img:nth-child(2) {
+            display: block;
+        }
+
+        .menu>img:nth-child(3):hover~div>img:nth-child(3) {
+            display: block;
+        }
+
+        .menu>img:nth-child(4):hover~div>img:nth-child(4) {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <img src="finn.png">
+        <img src="jake.png">
+        <img src="bmo.png">
+        <img src="lemongrab.png">
+        <div>
+            <img src="finn.png">
+            <img src="jake.png">
+            <img src="bmo.png">
+            <img src="lemongrab.png">
+        </div>
+    </div>
+</body>
+
+</html>

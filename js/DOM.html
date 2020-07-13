@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- DOM(Document Object Model) - 문서 객체 모델
+    tag - html object
+    DOM - 태그를 자바스크립트에서 이용할 수 있는 태그
+    node - html페이지의 각 요소
+    element node - html tag
+    text node - element node 안에 있는 text
+    정적문서객체생성 - html페이지에 적혀 있는 태그를 읽어서 생성하는 것
+    동적문서객체생성 - javascript로 원래 html문서에 없던 객체를 생성하는 것 -->
+
+    <h1>hi</h1>
+    <h1>bye</h1>
+    <h1>bye</h1>
+
+    <script>
+      window.onload = function fun() {
+        // var header = document.createElement("h1");
+        // var txtNode = document.createTextNode("Hello");
+        // header.appendChild(txtNode);
+        // document.body.appendChild(header);
+        // var img = document.createElement("img");
+        // img.setAttribute("src", "/green/css/bmo.jpg");
+        // img.setAttribute("width", "300px");
+        // img.setAttribute("height", "300");
+        // document.body.appendChild(img);
+        // var str = "<div>안녕</div>";
+        // document.body.innerHTML = str;
+        // var str = "<div>안녕</div>";
+        // document.body.textContent = str;
+        // var h1s = document.getElementsByTagName("h1");
+        // for (var i = 0; i < h1s.length; i++) {
+        //   h1s[i].setAttribute("class", "id");
+        // }
+        // set class
+        // var tags = document.getElementsByClassName("t");
+        // var str = "";
+        // for (var i = 0; i < tags.length; i++) {
+        //   str += tags[i].innerText;
+        // }
+        // document.body.innerHTML = str;
+        // var cls = document.querySelectorAll(".id");
+        // var str = "";
+        // for (var i = 0; i < cls.length; i++) {
+        //   str += cls[i].innerHTML;
+        // }
+        // document.body.innerHTML = str;
+        // HTML5 => querySelectorAll
+        // var htags = document.querySelectorAll(".id");
+        // for (var i = 0; i < htags.length; i++) {
+        //   document.body.removeChild(htags[i]);
+        // }
+        // remove child
+      };
+    </script>
+  </body>
+</html>

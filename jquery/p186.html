@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="http://code.jquery.com/jquery-latest.min.js"></script>
+  </head>
+  <body>
+    <div id="wrap">
+      <h1 class="title">선택자</h1>
+      <p>content1</p>
+      <p>content2</p>
+      <p class="txt3">content3</p>
+      <p>content4</p>
+      <p>content5</p>
+      <p class="txt6">content6</p>
+    </div>
+
+    <script>
+      $(function () {
+        var style_1 = {
+          "background-color": "#0ff",
+          border: "2px solid #f00",
+        };
+        // $(".txt3").prevUntil(".title").css(style_1);
+        // $(".txt3").nextUntil(".txt6").css(style_1);
+        $(".txt3").closest("div").css(style_1);
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <input type="button" />
+    <img src="bmo.jpg" alt="" />
+    <p>제이쿼리 좋음(팩트 구라)</p>
+
+    <script>
+      $(document).ready(function () {
+        $("input").click(function () {
+          //   $("img").hide(500);
+          $("img").slideUp(500);
+          //   $("img").fadeOut(500);
+          //   $("img").show("slow");
+          //   $("img").slideDown("fast");
+          //   $("img").fadeIn(500);
+          //   $("img").toggle(500);
+          //   $("img").slideToggle(500);
+          //   $("img").fadeToggle(500);
+          //   $("img").fadeTo(500, 0.5);
+          //   function chaining
+          //   $("p").css("color", "red").slideUp(500).slideDown(500);
+        });
+      });
+    </script>
+  </body>
+</html>
