@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 1000px;
+      }
+      .wrap {
+        border: 1px solid black;
+        background-color: gray;
+        position: relative;
+        margin-top: 500px;
+        height: 300px;
+        overflow: hidden;
+      }
+      .contant1 {
+        color: teal;
+        font-weight: bold;
+        position: absolute;
+        top: 300px;
+      }
+      .contant2 {
+        font-size: 50px;
+        font-weight: bold;
+        position: absolute;
+        top: 300px;
+      }
+      .contant3 {
+        color: white;
+        font-size: 50px;
+        font-weight: bold;
+        position: absolute;
+        top: 300px;
+      }
+      .contant4 {
+        color: white;
+        font-size: 50px;
+        font-weight: bold;
+        position: absolute;
+        top: 300px;
+      }
+      .contant5 {
+        color: white;
+        font-size: 50px;
+        position: absolute;
+        font-weight: bold;
+        top: 300px;
+      }
+      .contant6 {
+        color: white;
+        position: absolute;
+        top: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="contant1">TRIBECA SHORTLIST</div>
+      <div class="contant2">01</div>
+      <div class="contant3">MOVIES</div>
+      <div class="contant4">WORTH</div>
+      <div class="contant5">WATCHING</div>
+      <div class="contant6">Art Direction, Visual Design, UX</div>
+    </div>
+    <script>
+      $(window).on("scroll", function () {
+        var y = $(this).scrollTop();
+        if (200 < y && y < 300) {
+          $(".contant1").animate(
+            {
+              top: "25px",
+            },
+            500,
+            function () {
+              $(".contant2").animate(
+                {
+                  top: "0",
+                },
+                500,
+                function () {
+                  $(".contant3").animate(
+                    {
+                      top: "50px",
+                    },
+                    500,
+                    function () {
+                      $(".contant4").animate(
+                        {
+                          top: "100px",
+                        },
+                        500,
+                        function () {
+                          $(".contant5").animate(
+                            {
+                              top: "150px",
+                            },
+                            500,
+                            function () {
+                              $(".contant6").animate(
+                                {
+                                  top: "250px",
+                                },
+                                500
+                              );
+                            }
+                          );
+                        }
+                      );
+                    }
+                  );
+                }
+              );
+            }
+          );
+        }
+      });
+    </script>
+  </body>
+</html>

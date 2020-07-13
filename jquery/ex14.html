@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      .box {
+        width: 100px;
+        height: 30px;
+        border: 1px solid red;
+        position: relative;
+        overflow: hidden;
+      }
+      .word {
+        width: 100%;
+        border: 1px solid blue;
+        position: absolute;
+        left: 0;
+        top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="word">이것은 글씨</div>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $(".word").animate(
+          {
+            top: "0",
+          },
+          500
+        );
+      });
+    </script>
+  </body>
+</html>

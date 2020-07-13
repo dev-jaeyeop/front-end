@@ -21,25 +21,28 @@
       var num = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
       var han = ["ㄱ", "ㄴ", "ㄷ", "ㄹ", "ㅁ", "ㅂ", "ㅅ", "ㅇ", "ㅈ", "ㅊ"];
       var eng = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"];
-      var arr = num.concat(han, eng);
+      var temp = num.concat(han, eng);
       var count = 30;
+      var array = new Array();
+
+      for (var i = 0; i < 10; i++) {
+        array.push(num[i]);
+        array.push(han[i]);
+        array.push(eng[i]);
+      }
 
       $(document).ready(function () {
         for (var i = 0; i < 30; i++) {
           var ran = Math.floor(Math.random() * count);
-          var x = Math.floor(Math.random() * 450);
-          var y = Math.floor(Math.random() * 450);
+          console.log(temp[ran]);
           document.body.innerHTML +=
-            "<div>" + arr.splice(arr[ran], 1) + "</div>";
+            "<div>" + temp.splice(temp[ran], 1) + "</div>";
           count--;
         }
         $("div").click(function () {
-          if (
-            $(this).text() == num[0] ||
-            $(this).text() == han[0] ||
-            $(this).text() == eng[0]
-          ) {
+          if ($(this).text() == array[0]) {
             $(this).remove();
+            array.shift();
           }
         });
       });

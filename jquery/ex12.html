@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        height: 5000px;
+      }
+      nav {
+        width: 100%;
+        height: 100px;
+        border: 1px solid black;
+        position: fixed;
+        background-color: red;
+      }
+      #up {
+        width: 50px;
+        height: 50px;
+        border: 1px solid black;
+        position: fixed;
+        top: 900px;
+        margin-left: 94%;
+      }
+    </style>
+  </head>
+  <body>
+    <nav></nav>
+    <div id="up">up</div>
+    <script>
+      $(window).on("scroll", function () {
+        var y = $(this).scrollTop();
+        if (0 < y && y < 1000) {
+          $("nav").css("background-color", "red");
+        } else if (1000 < y && y < 2000) {
+          $("nav").css("background-color", "green");
+        } else if (2000 < y && y < 3000) {
+          $("nav").css("background-color", "blue");
+        } else if (3000 < y) {
+          $("nav").css("background-color", "yellow");
+        }
+      });
+      $("#up").click(function () {
+        $(window).scrollTop(0, 0);
+        $("nav").css("background-color", "red");
+      });
+    </script>
+  </body>
+</html>
