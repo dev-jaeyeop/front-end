@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <div class="test1">content1</div>
+    <div class="test2"><b>content2</b></div>
+    <input type="text" />
+    <button class="btn1">text()</button>
+    <button class="btn2">html()</button>
+    <button class="btn3">val()</button>
+    <button class="btn4">setText()</button>
+    <button class="btn5">setHtml</button>
+    <button class="btn6">setVal()</button>
+    <script>
+      $(document).ready(function () {
+        $(".btn1").click(function () {
+          var str = $(".test1").text();
+          alert(str);
+        });
+        $(".btn2").click(function () {
+          var str = $(".test2").html();
+          alert(str);
+        });
+        $(".btn3").click(function () {
+          var str = $("input").val();
+          alert(str);
+        });
+        $(".btn4").click(function () {
+          var str = "setText()";
+          $(".test1").text(str);
+        });
+        $(".btn5").click(function () {
+          var str = "<b> setHtml() </b>";
+          $(".test2").html(str);
+        });
+        $(".btn6").click(function () {
+          var str = "setValue()";
+          $("input").val(str);
+        });
+      });
+    </script>
+  </body>
+</html>

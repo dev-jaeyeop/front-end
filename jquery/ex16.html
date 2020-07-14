@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>append() prepend() / after() before()</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <a href="http://google.com"><b>google</b></a>
+    <button class="btn1">append()</button>
+    <button class="btn2">prepend()</button>
+    <button class="btn3">after()</button>
+    <button class="btn4">before()</button>
+    <script>
+      $(document).ready(function () {
+        $(".btn1").click(function () {
+          $("a").append("append()");
+        });
+        $(".btn2").click(function () {
+          $("a").prepend("prepend()");
+        });
+        $(".btn3").click(function () {
+          $("a").after("after()");
+        });
+        $(".btn4").click(function () {
+          $("a").before("before()");
+        });
+      });
+    </script>
+  </body>
+</html>

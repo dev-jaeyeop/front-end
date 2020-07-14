@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <button class="btn1" onclick="addElement()">addElement()</button>
+    <script>
+      function addElement() {
+        // 문자열로 객체 생성
+        var text1 = "<p>text1</p>";
+        // jQuery로 객체 생성
+        var text2 = $("<p></p>").text("text2");
+        // javascript로 객체 생성
+        var text3 = document.createElement("p");
+        text3.innerText = "text3";
+        $("body").append(text1, text2, text3);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      .txt1 {
+        width: 50px;
+        height: 50px;
+        background-color: cornflowerblue;
+        margin-left: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="txt1"></div>
+    <script>
+      $(document).ready(function () {
+        $(".txt1")
+          .animate({ marginLeft: "500px" }, 1000)
+          .animate({ marginTop: "500px" }, 1000)
+          .animate({ marginLeft: "50px" }, 1000)
+          .animate({ marginTop: 0 }, 1000);
+      });
+    </script>
+  </body>
+</html>

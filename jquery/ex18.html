@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    #wrap {
+      border: 1px solid black;
+      width: 300px;
+      height: 100px;
+      background-color: yellow;
+    }
+  </style>
+  <body>
+    <div id="wrap">
+      wrap
+      <p>&lt;p&gt;</p>
+      <button>button</button>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("button").click(function () {
+          //   $("#wrap").remove(); // 자식 포함 삭제
+          //   $("#wrap").empty(); // Children 삭제
+          //   var tmp = $("p").detach(); // cut
+          //   $("#wrap").after(tmp);
+        });
+      });
+    </script>
+  </body>
+</html>
