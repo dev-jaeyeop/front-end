@@ -14,7 +14,6 @@
       .container {
         width: 200px;
         height: 200px;
-        /* overflow: hidden; */
       }
       img {
         width: 200px;
@@ -26,6 +25,9 @@
         width: 100px;
         height: 30px;
       }
+      .next {
+        margin-left: 50px;
+      }
     </style>
   </head>
   <body>
@@ -36,23 +38,14 @@
         <img src="calcifer2.jpg" alt="" />
       </div>
     </div>
-    <button class="left">&lt;-</button>
-    <button class="right">-&gt;</button>
+    <button class="next">next</button>
     <script>
       $(document).ready(function () {
-        $(".left").click(function () {
+        $(".next").click(function () {
           $("img")
             .last()
             .fadeOut(function () {
               $("img").first().before($("img").last().detach());
-              $("img").first().fadeIn();
-            });
-        });
-        $(".right").click(function () {
-          $("img")
-            .last()
-            .fadeOut(function () {
-              $("img").last().after($("img").first().detach());
               $("img").first().fadeIn();
             });
         });

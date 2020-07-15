@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      .pop2,
+      .pop3 {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        left: 100px;
+        top: 100px;
+        border: 1px solid black;
+        display: none;
+        z-index: 5;
+      }
+      .box {
+        width: 100%;
+        height: 100vh;
+        position: fixed;
+        background-color: lightblue;
+        opacity: 50%;
+        display: none;
+        z-index: 4;
+      }
+    </style>
+  </head>
+  <body>
+    normalPopup / layerPopup / modalLayerPopup
+    <br />
+    <button>normalPopup</button>
+    <button>layerPopup</button>
+    <button>modalLayerPopup</button>
+    <div class="pop2">
+      <input type="button" value="X" />
+    </div>
+    <div class="pop3">
+      <input type="button" value="X" />
+    </div>
+    <div class="box"></div>
+    <p>
+      aasdf <br />
+      adfaa <br />
+      asdfa <br />
+      adfasd <br />
+    </p>
+    <script>
+      $(document).ready(function () {
+        $("button")
+          .eq(0)
+          .click(function () {
+            window.open("p345.html", "_blank", "width=400, height=400");
+          });
+
+        $("button")
+          .eq(1)
+          .click(function () {
+            $(".pop2").fadeIn(300);
+          });
+
+        // $("input").click(function () {
+        //   $(".pop2").fadeOut(300);
+        // });
+
+        $("button")
+          .eq(2)
+          .click(function () {
+            $(".box").fadeIn(500, function () {
+              $(".pop3").fadeIn(300);
+            });
+          });
+
+        $("input").click(function () {
+          $(".pop3").fadeOut(500, function () {
+            $(".box").fadeOut(300);
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

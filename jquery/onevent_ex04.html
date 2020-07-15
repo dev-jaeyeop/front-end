@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      p {
+        width: 100px;
+        height: 100px;
+        background-color: cadetblue;
+      }
+
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: aquamarine;
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      div tag
+      <p>p tag</p>
+    </div>
+    <script>
+      $(document).ready(function () {
+        $("div").on("click", "p", function () {
+          alert("event");
+          $(this).css("backgroundColor", "darkgray");
+        });
+      });
+    </script>
+  </body>
+</html>

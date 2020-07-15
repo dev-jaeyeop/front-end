@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    .viewBox {
+      position: relative;
+      width: 600px;
+      height: 100px;
+      border: 1px solid black;
+      background-color: cornflowerblue;
+    }
+
+    .container {
+      position: absolute;
+      display: flex;
+      justify-content: space-around;
+      width: 1200px;
+      height: 100px;
+    }
+
+    .box {
+      width: 50px;
+      height: 50px;
+      margin-top: 25px;
+      background-color: white;
+      color: cornflowerblue;
+      opacity: 50%;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .center {
+      transform: scale(1.5);
+      transition: linear;
+      opacity: 100%;
+      color: orangered;
+    }
+
+    button {
+      width: 50px;
+      margin-top: 50px;
+    }
+  </style>
+  <body>
+    <div class="viewBox">
+      <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+      </div>
+    </div>
+    <button class="left">&lt;-</button>
+    <button class="right">-&gt;</button>
+    <script>
+      $(document).ready(function () {
+        $(".left").click(function () {
+          $(".container").animate(
+            {
+              left: "-200px",
+            },
+            function () {
+              $(".container").css("left", 0);
+              $(".container div")
+                .last()
+                .after($(".container div").first().detach());
+              $(".container").children().eq(1).addClass("center");
+              $(".container").children().eq(0).removeClass("center");
+            }
+          );
+        });
+
+        $(".right").click(function () {
+          $(".container div")
+            .first()
+            .before($(".container div").last().detach());
+          $(".container div")
+            .first()
+            .before($(".container div").last().detach());
+          $(".container").animate(
+            {
+              left: "200px",
+            },
+            function () {
+              $(".container").css("left", 0);
+              $(".container").children().eq(0).removeClass("center");
+              $(".container").children().eq(-1).addClass("center");
+            }
+          );
+        });
+      });
+    </script>
+  </body>
+</html>

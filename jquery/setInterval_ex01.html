@@ -41,19 +41,12 @@
         <img src="calcifer2.jpg" alt="" />
       </div>
     </div>
-    <button class="left">&lt;-</button>
-    <button class="right">-&gt;</button>
   </body>
   <script>
-    $(document).ready(function () {
-      $(".left").click(function () {
-        $(".box").css("left", "-200px");
-        $("img").first().before($("img").last().detach());
-        $(".box").stop().animate({
-          left: "0",
-        });
-      });
-      $(".right").click(function () {
+    var reverse = false;
+    var count = 0;
+    setInterval(function () {
+      if (!reverse) {
         $(".box")
           .stop()
           .animate(
@@ -65,7 +58,23 @@
               $("img").last().after($("img").first().detach());
             }
           );
-      });
-    });
+        count++;
+        if (count > 1) {
+          reverse = true;
+          count = 0;
+        }
+      } else {
+        $(".box").css("left", "-200px");
+        $("img").first().before($("img").last().detach());
+        $(".box").stop().animate({
+          left: "0",
+        });
+        count--;
+        if (count < -1) {
+          reverse = false;
+          count = 0;
+        }
+      }
+    }, 2000);
   </script>
 </html>

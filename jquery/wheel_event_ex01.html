@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <script>
+      // chrome explorer => mousewheel
+      // firefox => DOMMouseScorll
+
+      $(document).ready(function () {
+        $("html, body").on("mousewheel DOMMouseScorll", function (e) {
+          // firefox => e.originalEvent.detail
+          // chrome explorer => e.originalEvent.wheelDelta;
+          var event = e.originalEvent;
+          var delta = 0;
+          if (event.detail) {
+            // firefox => wheel↓ => +3
+            delta = event.detail * -40;
+          } else {
+            // chrome explorer => wheel↓ => -120
+            delta = event.wheelDelta;
+          }
+          $("body").text(delta);
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      p {
+        width: 500px;
+        height: 300px;
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+  <body>
+    <p>p tag</p>
+    <script>
+      // map
+      $(document).ready(function () {
+        $("p").on({
+          mouseenter: function () {
+            $("p").css("backgroundColor", "cyan");
+          },
+          mouseleave: function () {
+            $("p").css("backgroundColor", "crimson");
+          },
+          click: function () {
+            $("p").css("backgroundColor", "yellow");
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

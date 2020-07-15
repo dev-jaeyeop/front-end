@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        border: 1px solid black;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      var isLeft = false;
+      // setInterval(function(), delay)
+      setInterval(function () {
+        if (!isLeft) {
+          $("div").animate(
+            {
+              left: "200px",
+            },
+            500
+          );
+          isLeft = true;
+        } else {
+          $("div").animate(
+            {
+              left: "0px",
+            },
+            500
+          );
+          isLeft = false;
+        }
+      }, 1000);
+    </script>
+  </body>
+</html>
