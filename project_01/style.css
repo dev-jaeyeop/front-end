@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.wrap {
+  position: relative;
+}
+.header-wrap {
+  position: fixed;
+  width: 100%;
+  height: 5vh;
+  background-color: aquamarine;
+  display: flex;
+  justify-content: center;
+  z-index: 30;
+}
+header {
+  width: 1300px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin: 0, auto;
+}
+header ul {
+  list-style: none;
+  display: flex;
+}
+header .left li,
+header .right li {
+  width: 100px;
+  text-align: center;
+  margin: auto 0;
+}
+main {
+  position: relative;
+  height: 95vh;
+}
+.nav-wrap {
+  width: 100%;
+  height: 74px;
+  margin-top: 45px;
+  background-color: bisque;
+  display: flex;
+  justify-content: center;
+}
+nav {
+  width: 1650px;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.logo {
+  margin: auto 0;
+  text-align: center;
+}
+.menu ul {
+  list-style: none;
+  display: flex;
+}
+.menu ul li {
+  width: 100px;
+}
+.logo,
+.search {
+  width: 100px;
+}
+.menu,
+.search {
+  text-align: center;
+  margin-top: 53px;
+}
+.page:nth-child(1) {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: cadetblue;
+  z-index: 10;
+}
+.page:nth-child(2) {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: cornflowerblue;
+  z-index: 9;
+}
+.page:nth-child(3) {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: gray;
+  z-index: 8;
+}

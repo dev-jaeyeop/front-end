@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .boxgroup {
+        position: relative;
+        width: 100%;
+        cursor: pointer;
+        white-space: nowrap;
+        overflow-x: scroll;
+      }
+      .boxgroup.active {
+        background-color: bisque;
+        opacity: 30%;
+        cursor: grabbing;
+      }
+      .box {
+        width: 400px;
+        height: 250px;
+        background-color: aquamarine;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="boxgroup">
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+      <div class="box"></div>
+    </div>
+    <p></p>
+    <p></p>
+    <p></p>
+    <script>
+      $(document).ready(function () {
+        var isDown = false; // is down?
+        var startX = 0; // this x
+        var scrollLeft = 0; // scrollbar x
+        $(".boxgroup").mousedown(function (event) {
+          isDown = true;
+          $(".boxgroup").addClass("active");
+          startX = event.pageX;
+          scrollLeft = $(".boxgroup").scrollLeft();
+          $("p")
+            .eq(0)
+            .text("mouse x" + startX);
+          $("p")
+            .eq(1)
+            .text("scroll x" + scrollLeft);
+        });
+        $(".boxgroup").mousemove(function () {
+          if (!isDown) {
+            return;
+          }
+          event.preventDefault();
+          var x = event.pageX;
+          var moveX = x - startX;
+          $(".boxgroup").scrollLeft(scrollLeft - moveX);
+          $("p")
+            .eq(2)
+            .text("moveX" + x);
+        });
+        $(".boxgroup").on({
+          mouseup: function () {
+            isDown = false;
+            $(".boxgroup").removeClass("active");
+          },
+          mouseleave: function () {
+            isDown = false;
+            $(".boxgroup").removeClass("active");
+          },
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Logitech</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="header-wrap">
+        <header>
+          <ul class="left">
+            <li>header1</li>
+            <li>header2</li>
+            <li>header3</li>
+          </ul>
+          <ul class="right">
+            <li>header4</li>
+            <li>header5</li>
+          </ul>
+        </header>
+      </div>
+
+      <main>
+        <div class="page">
+          <div class="nav-wrap">
+            <nav>
+              <div class="logo">logo</div>
+              <div class="menu">
+                <ul>
+                  <li>menu1</li>
+                  <li>menu2</li>
+                  <li>menu3</li>
+                  <li>menu4</li>
+                </ul>
+              </div>
+              <div class="search">search</div>
+            </nav>
+          </div>
+        </div>
+        <div class="page"></div>
+        <div class="page"></div>
+      </main>
+
+      <footer>footer</footer>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $(".page").on("mousewheel DOMMouseScorll", function (e) {
+          e.preventDefault();
+          var event = e.originalEvent;
+          var delta = 0;
+          if (event.detail) {
+            delta = event.detail * -40;
+          } else {
+            delta = event.wheelDelta;
+          }
+          if (delta < 0 && $(this).index() != $("main").length + 1) {
+            $(this).stop().slideUp(500);
+          } else if (delta > 0) {
+            $(this).prev().stop().slideDown(500);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
