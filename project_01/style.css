@@ -5,11 +5,12 @@
 }
 .wrap {
   position: relative;
+  height: 150vh;
 }
 .header-wrap {
   position: fixed;
   width: 100%;
-  height: 5vh;
+  height: 10vh;
   background-color: aquamarine;
   display: flex;
   justify-content: center;
@@ -26,68 +27,98 @@ header ul {
   list-style: none;
   display: flex;
 }
-header .left li,
-header .right li {
+header .header-left li,
+header .header-right li {
   width: 100px;
+  height: 30px;
   text-align: center;
   margin: auto 0;
+  border: 1px solid black;
+  background-color: white;
 }
 main {
   position: relative;
-  height: 95vh;
+  height: 90vh;
 }
-.nav-wrap {
+.page {
+  position: absolute;
+  width: 100%;
+  height: 90vh;
+  top: 10vh;
+  overflow: hidden;
+  z-index: 8;
+}
+.page .button {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  font-size: 100px;
+  width: 100%;
+  top: 42.5vh;
+  z-index: 10;
+}
+.page .left:hover,
+.page .right:hover {
+  color: white;
+  cursor: pointer;
+}
+.page .nav-wrap {
+  position: absolute;
   width: 100%;
   height: 74px;
-  margin-top: 45px;
-  background-color: bisque;
+  top: 45px;
   display: flex;
   justify-content: center;
+  z-index: 9;
 }
-nav {
+.page .nav-wrap nav {
   width: 1650px;
   height: 100%;
   display: flex;
   justify-content: space-around;
 }
-.logo {
+.page .nav-wrap nav .logo {
   margin: auto 0;
   text-align: center;
 }
-.menu ul {
+.page .nav-wrap nav .menu ul {
   list-style: none;
   display: flex;
 }
-.menu ul li {
+.page .nav-wrap nav .menu ul li {
   width: 100px;
+  height: 30px;
+  border: 1px solid black;
+  background-color: white;
 }
-.logo,
-.search {
+.page .nav-wrap nav .logo,
+.page .nav-wrap nav .search {
   width: 100px;
+  height: 30px;
+  border: 1px solid black;
+  background-color: white;
 }
-.menu,
-.search {
+.page .nav-wrap nav .menu,
+.page .nav-wrap nav .search {
   text-align: center;
   margin-top: 53px;
 }
-.page:nth-child(1) {
+.page .img {
   position: absolute;
+  display: flex;
+  width: 300%;
+}
+.page .img img {
   width: 100%;
   height: 100vh;
-  background-color: cadetblue;
-  z-index: 10;
 }
-.page:nth-child(2) {
+footer {
   position: absolute;
   width: 100%;
-  height: 100vh;
-  background-color: cornflowerblue;
-  z-index: 9;
+  height: 50vh;
+  top: 50vh;
 }
-.page:nth-child(3) {
-  position: absolute;
-  width: 100%;
-  height: 100vh;
-  background-color: gray;
-  z-index: 8;
-}
+/* @media (min-height: 100vh) {
+  footer {
+  }
+} */

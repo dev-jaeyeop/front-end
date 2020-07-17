@@ -5,18 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Logitech</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script
+      src="https://kit.fontawesome.com/4be9a87855.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
     <div class="wrap">
       <div class="header-wrap">
         <header>
-          <ul class="left">
+          <ul class="header-left">
             <li>header1</li>
             <li>header2</li>
             <li>header3</li>
           </ul>
-          <ul class="right">
+          <ul class="header-right">
             <li>header4</li>
             <li>header5</li>
           </ul>
@@ -25,23 +29,33 @@
 
       <main>
         <div class="page">
+          <div class="button">
+            <i class="fas fa-chevron-left left"></i>
+            <i class="fas fa-chevron-right right"></i>
+          </div>
           <div class="nav-wrap">
             <nav>
               <div class="logo">logo</div>
               <div class="menu">
                 <ul>
-                  <li>menu1</li>
-                  <li>menu2</li>
-                  <li>menu3</li>
-                  <li>menu4</li>
+                  <li>제품</li>
+                  <li>솔루션</li>
+                  <li>비즈니스</li>
+                  <li>지원</li>
                 </ul>
               </div>
-              <div class="search">search</div>
+              <div class="search">
+                검색&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <i class="fas fa-search"></i>
+              </div>
             </nav>
           </div>
+          <div class="img">
+            <img src="calcifer.jpg" alt="" />
+            <img src="calcifer1.jpg" alt="" />
+            <img src="calcifer2.jpg" alt="" />
+          </div>
         </div>
-        <div class="page"></div>
-        <div class="page"></div>
       </main>
 
       <footer>footer</footer>
@@ -49,20 +63,49 @@
 
     <script>
       $(document).ready(function () {
-        $(".page").on("mousewheel DOMMouseScorll", function (e) {
-          e.preventDefault();
-          var event = e.originalEvent;
-          var delta = 0;
-          if (event.detail) {
-            delta = event.detail * -40;
-          } else {
-            delta = event.wheelDelta;
-          }
-          if (delta < 0 && $(this).index() != $("main").length + 1) {
-            $(this).stop().slideUp(500);
-          } else if (delta > 0) {
-            $(this).prev().stop().slideDown(500);
-          }
+        setInterval(function () {
+          $(".page .img").animate(
+            {
+              left: "-100%",
+            },
+            1000,
+            function () {
+              $(".page .img").css("left", 0);
+              $(".page .img img")
+                .last()
+                .after($(".page .img img").first().detach());
+            }
+          );
+        }, 4000);
+
+        $(".left").click(function () {
+          $(".page .img img")
+            .first()
+            .before($(".page .img img").last().detach());
+          $(".page .img").css("left", "-100%");
+          $(".page .img").stop().animate(
+            {
+              left: "0",
+            },
+            1000
+          );
+        });
+
+        $(".right").click(function () {
+          $(".page .img")
+            .stop()
+            .animate(
+              {
+                left: "-100%",
+              },
+              1000,
+              function () {
+                $(".page .img").css("left", 0);
+                $(".page .img img")
+                  .last()
+                  .after($(".page .img img").first().detach());
+              }
+            );
         });
       });
     </script>
