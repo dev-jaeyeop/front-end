@@ -16,13 +16,36 @@
       <div class="header-wrap">
         <header>
           <ul class="header-left">
-            <li>header1</li>
-            <li>header2</li>
-            <li>header3</li>
+            <li>
+              <img
+                src="https://www.logitech.com/content/dam/logitech/common/header/logitechg-bottom.svg"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="https://www.logitech.com/content/dam/logitech/common/header/jaybird-bottom.svg"
+                alt=""
+              />
+            </li>
+            <li>
+              <img
+                src="https://www.logitech.com/content/dam/logitech/common/header/ue-bottom.svg"
+                alt=""
+              />
+            </li>
           </ul>
           <ul class="header-right">
-            <li>header4</li>
-            <li>header5</li>
+            <li>
+              <img
+                src="https://www.logitech.com/images/flags/south-korea.gif"
+                alt=""
+              />&nbsp;&nbsp;KO
+            </li>
+            <li>
+              <i class="far fa-user"></i>
+              내 계정
+            </li>
           </ul>
         </header>
       </div>
@@ -35,8 +58,13 @@
           </div>
           <div class="nav-wrap">
             <nav>
-              <div class="logo">logo</div>
-              <div class="menu">
+              <div class="logo">
+                <img
+                  src="https://www.logitech.com/images/log-logo-sprite-r-black.png"
+                  alt=""
+                />
+              </div>
+              <div class="main-menu">
                 <ul>
                   <li>제품</li>
                   <li>솔루션</li>
@@ -44,25 +72,80 @@
                   <li>지원</li>
                 </ul>
               </div>
+              <div class="sub-menu"></div>
               <div class="search">
-                검색&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                검색&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <i class="fas fa-search"></i>
+              </div>
+              <div class="searchbar-wrap">
+                <div class="searchbar">
+                  <input type="text" placeholder="검색" />
+                  <i class="fas fa-search"></i>
+                </div>
               </div>
             </nav>
           </div>
           <div class="img">
-            <img src="calcifer.jpg" alt="" />
-            <img src="calcifer1.jpg" alt="" />
-            <img src="calcifer2.jpg" alt="" />
+            <img src="1.jpg" alt="" />
+            <img src="2.jpg" alt="" />
+            <img src="3.jpg" alt="" />
+            <img src="4.jpg" alt="" />
+            <img src="5.jpg" alt="" />
           </div>
         </div>
       </main>
 
-      <footer>footer</footer>
+      <footer></footer>
     </div>
 
     <script>
       $(document).ready(function () {
+        $(".main-menu li").mouseover(function () {
+          $(".sub-menu").stop().animate({
+            height: "300px",
+          });
+          $(".sub-menu").text($(this).text());
+        });
+
+        $(".main-menu li").mouseout(function () {
+          $(".sub-menu")
+            .stop()
+            .animate(
+              {
+                height: 0,
+              },
+              function () {
+                $(".sub-menu").text("");
+              }
+            );
+        });
+
+        $(".search").click(function () {
+          $(".searchbar-wrap").css("display", "flex");
+          $("input").focus();
+          $(".searchbar-wrap").animate(
+            {
+              opacity: "100%",
+            },
+            function () {
+              $(".searchbar i").animate({
+                zoom: "2",
+              });
+            }
+          );
+        });
+
+        $(".img").click(function () {
+          $(".searchbar-wrap").animate(
+            {
+              opacity: "0%",
+            },
+            function () {
+              $(".searchbar-wrap").css("display", "none");
+            }
+          );
+        });
+
         setInterval(function () {
           $(".page .img").animate(
             {
@@ -87,7 +170,7 @@
             {
               left: "0",
             },
-            1000
+            500
           );
         });
 
@@ -98,7 +181,7 @@
               {
                 left: "-100%",
               },
-              1000,
+              500,
               function () {
                 $(".page .img").css("left", 0);
                 $(".page .img img")
