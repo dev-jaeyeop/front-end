@@ -5,6 +5,7 @@
 }
 .wrap {
   position: relative;
+  width: 100%;
   height: 150vh;
 }
 .header-wrap {
@@ -16,72 +17,79 @@
   justify-content: center;
   z-index: 10;
 }
-header {
+.header-wrap header {
   width: 1300px;
   height: 100%;
   display: flex;
   justify-content: space-between;
   margin: 0, auto;
 }
-header ul {
+.header-wrap header ul {
   list-style: none;
   display: flex;
 }
-header .header-left li,
-header .header-right li {
+.header-wrap header .header-left li,
+.header-wrap header .header-right li {
   width: 100px;
   height: 30px;
   text-align: center;
   margin: auto 5px;
 }
-header ul li {
+.header-wrap header ul li {
   cursor: pointer;
   opacity: 50%;
 }
-header .header-left li img {
+.header-wrap header .header-left li img {
   width: 80%;
   height: 80%;
 }
-header .header-left li:nth-child(2) {
+.header-wrap header .header-left li:nth-child(2) {
   border-left: 0.5px solid white;
   border-right: 0.5px solid white;
 }
-header .header-right {
+.header-wrap header .header-right {
   color: white;
   font-size: 13px;
   font-weight: bold;
 }
-
-header .header-right li:nth-child(2) {
+.header-wrap header .header-right li:nth-child(2) {
   border-left: 0.5px solid white;
 }
-main {
+
+.main-wrap {
   position: relative;
+  width: 100%;
   height: 95vh;
   top: 5vh;
 }
-.page {
+.main-wrap main {
   position: absolute;
   width: 100%;
   height: 100%;
   overflow: hidden;
   z-index: 8;
 }
-.page .button {
+.main-wrap main .button {
   position: absolute;
   display: flex;
   justify-content: space-between;
   font-size: 100px;
   width: 100%;
-  top: 47.5vh;
+  top: 45vh;
   z-index: 10;
+  font-size: 100px;
 }
-.page .left:hover,
-.page .right:hover {
-  color: white;
+.main-wrap main .left,
+.main-wrap main .right {
+  color: black;
+  opacity: 50%;
+}
+.main-wrap main .left:hover,
+.main-wrap main .right:hover {
+  opacity: 80%;
   cursor: pointer;
 }
-.page .nav-wrap {
+.main-wrap main .top-nav-wrap {
   position: absolute;
   width: 100%;
   height: 10vh;
@@ -89,13 +97,13 @@ main {
   justify-content: center;
   z-index: 9;
 }
-.page .nav-wrap nav {
+.main-wrap main .top-nav-wrap nav {
   width: 1650px;
   height: 100%;
   display: flex;
   justify-content: space-around;
 }
-.page .nav-wrap nav .logo {
+.main-wrap main .top-nav-wrap nav .logo {
   width: 100px;
   height: 40px;
   overflow: hidden;
@@ -103,23 +111,23 @@ main {
   text-align: center;
   cursor: default;
 }
-.page .nav-wrap nav .logo img {
+.main-wrap main .top-nav-wrap nav .logo img {
   position: relative;
   width: 100%;
   top: -1122px;
 }
-.page .nav-wrap nav .main-menu ul {
+.main-wrap main .top-nav-wrap nav .main-menu ul {
   list-style: none;
   display: flex;
 }
-.page .nav-wrap nav .main-menu ul li {
+.main-wrap main .top-nav-wrap nav .main-menu ul li {
   width: 100px;
   height: 30px;
   cursor: pointer;
   font-size: 13px;
   font-weight: bold;
 }
-.page .nav-wrap nav .sub-menu {
+.main-wrap main .top-nav-wrap nav .sub-menu {
   position: absolute;
   display: flex;
   justify-content: center;
@@ -128,24 +136,26 @@ main {
   top: 8vh;
   background-color: white;
 }
-.page .nav-wrap nav .sub-menu div {
+.main-wrap main .top-nav-wrap nav .sub-menu div {
   margin: 30px;
 }
-.page .nav-wrap nav .sub-menu li {
+.main-wrap .page .top-nav-wrap nav .sub-menu li {
   list-style: none;
 }
-
-.page .nav-wrap nav .search {
+.main-wrap main .top-nav-wrap nav .search {
+  display: flex;
+  justify-content: space-between;
   border-bottom: 0.5px solid black;
   height: 30px;
+  width: 100px;
   font-size: 14px;
 }
-.page .nav-wrap nav .main-menu,
-.page .nav-wrap nav .search {
+.main-wrap main .top-nav-wrap nav .main-menu,
+.main-wrap main .top-nav-wrap nav .search {
   text-align: center;
   margin-top: 44px;
 }
-.page .nav-wrap nav .searchbar-wrap {
+.main-wrap main .top-nav-wrap nav .searchbar-wrap {
   position: absolute;
   display: none;
   justify-content: center;
@@ -154,35 +164,105 @@ main {
   opacity: 0%;
   background-color: white;
 }
-.page .nav-wrap nav .searchbar-wrap .searchbar {
+.main-wrap main .top-nav-wrap nav .searchbar-wrap .searchbar {
   width: 1300px;
   height: 100%;
 }
-.page .nav-wrap nav .searchbar-wrap .searchbar input {
+.main-wrap main .top-nav-wrap nav .searchbar-wrap .searchbar input {
   width: 90%;
   height: 100%;
   border: none;
   font-size: 30px;
   font-weight: bold;
-  /* opacity: 30%; */
+  opacity: 50%;
 }
-.searchbar i {
-  float: right;
-  margin-top: 45px;
-}
-.page .nav-wrap nav .searchbar-wrap .searchbar input:focus {
+.main-wrap main .top-nav-wrap nav .searchbar-wrap .searchbar input:focus {
   outline: none;
 }
-.page .img {
+.main-wrap main .img-wrap {
   position: absolute;
   display: flex;
-  width: 300%;
   height: 100%;
 }
-footer {
+.main-wrap main .img-wrap .img {
+  position: relative;
+  width: 100vw;
+  height: 100%;
+  background-size: 100% 100%;
+}
+
+.main-wrap main .img-wrap .img div,
+.main-wrap main .img-wrap .img input {
+  position: absolute;
+  left: 190px;
+}
+.main-wrap main .img-wrap .img :nth-child(1) {
+  top: 320px;
+  font-size: 20px;
+}
+.main-wrap main .img-wrap .img :nth-child(2) {
+  top: 330px;
+  font-size: 70px;
+  font-weight: bold;
+}
+.main-wrap main .img-wrap .img :nth-child(3) {
+  top: 393px;
+  font-size: 70px;
+  font-weight: bold;
+}
+.main-wrap main .img-wrap .img input {
+  width: 200px;
+  height: 50px;
+  border-radius: 0;
+  top: 530px;
+  background-color: #252a2c;
+  border: #252a2c;
+  color: #dcfd00;
+  z-index: 11;
+}
+.main-wrap main .img-wrap .img input:hover {
+  background-color: #dcfd00;
+  color: #252a2c;
+  border: 1.5px solid #252a2c;
+  cursor: pointer;
+}
+
+.footer-wrap {
   position: fixed;
+  display: flex;
+  justify-content: center;
   width: 100%;
   height: 50vh;
   top: 50vh;
   background-color: #252a2c;
+}
+.footer-wrap footer .bottom-nav-wrap nav {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70vw;
+  height: 20vh;
+  margin-top: 50px;
+  border-bottom: 1px solid rgb(255, 255, 255, 50%);
+}
+.footer-wrap footer .bottom-nav-wrap nav div {
+  width: 25%;
+  height: 33%;
+  color: white;
+}
+.footer-wrap footer .news-letter-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  width: 70vw;
+  height: 15vh;
+  margin-top: 10px;
+}
+.footer-wrap footer .news-letter-wrap div,
+.footer-wrap footer .news-letter-wrap input {
+  width: 50%;
+  height: 45px;
+}
+
+.footer-wrap footer .copyright {
+  width: 100%;
+  height: 5vh;
 }

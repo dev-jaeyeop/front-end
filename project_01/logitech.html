@@ -50,13 +50,14 @@
         </header>
       </div>
 
-      <main>
-        <div class="page">
+      <div class="main-wrap">
+        <main>
           <div class="button">
             <i class="fas fa-chevron-left left"></i>
             <i class="fas fa-chevron-right right"></i>
           </div>
-          <div class="nav-wrap">
+
+          <div class="top-nav-wrap">
             <nav>
               <div class="logo">
                 <img
@@ -74,28 +75,60 @@
               </div>
               <div class="sub-menu"></div>
               <div class="search">
-                검색&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span>검색</span>
                 <i class="fas fa-search"></i>
               </div>
               <div class="searchbar-wrap">
                 <div class="searchbar">
                   <input type="text" placeholder="검색" />
-                  <i class="fas fa-search"></i>
                 </div>
               </div>
             </nav>
           </div>
-          <div class="img">
-            <img src="1.jpg" alt="" />
-            <img src="2.jpg" alt="" />
-            <img src="3.jpg" alt="" />
-            <img src="4.jpg" alt="" />
-            <img src="5.jpg" alt="" />
-          </div>
-        </div>
-      </main>
 
-      <footer></footer>
+          <div class="img-wrap">
+            <div class="img" style="background-image: url('1.jpg');">
+              <div>iPad용 Combo Touch</div>
+              <div>새 아이디어를</div>
+              <div>클릭만으로</div>
+              <input type="button" value="TOUCH COMBO" />
+            </div>
+            <div class="img" style="background-image: url('2.jpg');"></div>
+            <div class="img" style="background-image: url('3.jpg');"></div>
+            <div class="img" style="background-image: url('4.jpg');"></div>
+            <div class="img" style="background-image: url('5.jpg');"></div>
+          </div>
+        </main>
+      </div>
+
+      <div class="footer-wrap">
+        <footer>
+          <div class="bottom-nav-wrap">
+            <nav>
+              <div>소개</div>
+              <div>연락처</div>
+              <div>채용정보</div>
+              <div>개인정보 취급방침</div>
+              <div>사이트맵</div>
+              <div>투자자</div>
+              <div>이용 약관</div>
+              <div>지속 가능성</div>
+              <div>보도 자료</div>
+              <div>이메일 구독</div>
+            </nav>
+          </div>
+          <div class="news-letter-wrap">
+            <div>l</div>
+            <div>뉴스레터 가입</div>
+            <div>l</div>
+            <input type="text" placeholder="이메일" />
+          </div>
+          <div class="copyright">
+            <div></div>
+            <div></div>
+          </div>
+        </footer>
+      </div>
     </div>
 
     <script>
@@ -121,52 +154,53 @@
         });
 
         $(".search").click(function () {
+          $(".search i").css("zIndex", 10);
           $(".searchbar-wrap").css("display", "flex");
           $("input").focus();
-          $(".searchbar-wrap").animate(
-            {
-              opacity: "100%",
-            },
-            function () {
-              $(".searchbar i").animate({
-                zoom: "2",
-              });
-            }
-          );
+          $(".search i").animate({
+            zoom: 2,
+          });
+          $(".searchbar-wrap").animate({
+            opacity: "100%",
+          });
         });
 
         $(".img").click(function () {
+          $(".search i").animate({
+            zoom: 1,
+          });
           $(".searchbar-wrap").animate(
             {
               opacity: "0%",
             },
             function () {
+              $(".search i").css("zIndex", "auto");
               $(".searchbar-wrap").css("display", "none");
             }
           );
         });
 
-        setInterval(function () {
-          $(".page .img").animate(
-            {
-              left: "-100%",
-            },
-            1000,
-            function () {
-              $(".page .img").css("left", 0);
-              $(".page .img img")
-                .last()
-                .after($(".page .img img").first().detach());
-            }
-          );
-        }, 4000);
+        // setInterval(function () {
+        //   $("main .img-wrap").animate(
+        //     {
+        //       left: "-100%",
+        //     },
+        //     1000,
+        //     function () {
+        //       $("main .img-wrap").css("left", 0);
+        //       $("main .img-wrap .img")
+        //         .last()
+        //         .after($("main .img-wrap .img").first().detach());
+        //     }
+        //   );
+        // }, 4000);
 
         $(".left").click(function () {
-          $(".page .img img")
+          $("main .img-wrap .img")
             .first()
-            .before($(".page .img img").last().detach());
-          $(".page .img").css("left", "-100%");
-          $(".page .img").stop().animate(
+            .before($("main .img-wrap .img").last().detach());
+          $("main .img-wrap").css("left", "-100%");
+          $("main .img-wrap").stop().animate(
             {
               left: "0",
             },
@@ -175,7 +209,7 @@
         });
 
         $(".right").click(function () {
-          $(".page .img")
+          $("main .img-wrap")
             .stop()
             .animate(
               {
@@ -183,10 +217,10 @@
               },
               500,
               function () {
-                $(".page .img").css("left", 0);
-                $(".page .img img")
+                $("main .img-wrap").css("left", 0);
+                $("main .img-wrap .img")
                   .last()
-                  .after($(".page .img img").first().detach());
+                  .after($("main .img-wrap .img").first().detach());
               }
             );
         });
